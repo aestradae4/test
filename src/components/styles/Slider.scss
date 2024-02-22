@@ -1,0 +1,273 @@
+ 
+:root {
+	margin: 0;
+	padding: 0;	
+}
+
+
+html,
+body, 
+#app {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+#app {
+	position: relative;
+	animation: fadeIn 700ms ease-in-out forwards;
+}
+
+section.wrapper {
+    position: relative;
+	width: 100%;
+	height: 100%;
+	background-size: 100% 100%;
+	
+	transition: background-image 700ms ease-in-out;
+	display: flex;
+	align-items: end;
+	justify-content: center;
+
+	overflow: hidden;
+	
+	h1.title-slider{ 
+		color: #FFF;
+        text-align: center;
+        font-size: 5vw;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+
+		width: 80vw;
+        border-bottom: .25vw solid #FFF;
+        
+        bottom: 5vh;
+
+		will-change: transform, opacity;
+
+		&.slideInRight {
+			display: flex;
+			justify-content: end;
+			position: relative;
+		}
+
+		&.slideInLeft {
+			display: flex;
+			justify-content: start;
+			position: relative;
+		}
+	}
+}
+
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes slideInLeft {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    0% {
+        transform: translateX(-100%);
+    }
+    10% {
+        transform: translateX(0);
+    }
+    90% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideInRight {
+    0%, 100% {
+        opacity: 0;
+    }
+    10%, 90% {
+        opacity: 1;
+    }
+    0% {
+        transform: translateX(100%);
+    }
+    10% {
+        transform: translateX(0);
+    }
+    90% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+div.overlay-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.33);
+	width: 100%;
+	height: 100%;
+}
+
+/*************** Pantallas tablet (768px) y tablet L (1024px) con orientacion vertical  *******************/
+@media (min-width: 750px) and (max-width: 1030px) and (orientation: portrait) {
+     
+    :root {
+        margin: 0;
+        padding: 0;	
+    }
+
+
+    html,
+    body, 
+    #app {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #app {
+        position: relative;
+        animation: fadeIn 700ms ease-in-out forwards;
+    }
+
+    section.wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100%;
+        
+        transition: background-image 700ms ease-in-out;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+
+        overflow: hidden;
+        
+        h1.title-slider{ 
+            color: #FFF;
+            text-align: center;
+            font-size: 5vw;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            width: 80vw;
+            border-bottom: .25vw solid #FFF;
+            
+            bottom: 5vh;
+
+            will-change: transform, opacity;
+
+            &.slideInRight {
+                display: flex;
+                justify-content: end;
+                position: relative;
+            }
+
+            &.slideInLeft {
+                display: flex;
+                justify-content: start;
+                position: relative;
+            }
+        }
+    }
+
+    div.overlay-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.33);
+        width: 100%;
+        height: 100%;
+    }
+}
+
+/*************** Pantallas movil (749px) con orientacion vertical  *******************/
+@media (max-width: 749px) and (orientation: portrait) {
+     
+    :root {
+        margin: 0;
+        padding: 0;	
+    }
+
+
+    html,
+    body, 
+    #app {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #app {
+        position: relative;
+        animation: fadeIn 700ms ease-in-out forwards;
+    }
+
+    section.wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        
+        transition: background-image 700ms ease-in-out;
+        display: flex;
+        align-items: end;
+        justify-content: center;
+
+        overflow: hidden;
+        
+        h1.title-slider{ 
+            color: #FFF;
+            text-align: center;
+            font-size: 5vw;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            width: 80vw;
+            border-bottom: .25vw solid #FFF;
+            
+            bottom: 5vh;
+
+            will-change: transform, opacity;
+
+            &.slideInRight {
+                display: flex;
+                justify-content: end;
+                position: relative;
+            }
+
+            &.slideInLeft {
+                display: flex;
+                justify-content: start;
+                position: relative;
+            }
+        }
+    }
+
+    div.overlay-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.33);
+        width: 100%;
+        height: 100%;
+    }
+}
