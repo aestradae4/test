@@ -1,9 +1,10 @@
 import React from 'react'
 import './App.css'
+import './components/styles/Cards.css'
 import Navbar from './components/Navbar'
 import Slider from './components/Slider'
-/* import Cards from './components/Cards' */ // <---- tu componente Cards
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
+import pizzasList from './components/Cards'; 
 
 const dataHero = [
   {
@@ -26,7 +27,6 @@ const dataHero = [
     img: 'https://s3.amazonaws.com/consultag.la/recursos-consultag/Home/Slider/sliderHome-3.png',
     title: 'MEJORANDO DESDE 2014',
   },
-  // ... otros objetos
 ];
 
 function App() {
@@ -34,18 +34,24 @@ function App() {
   return (
     <>
       <Navbar />
-      
       <section className='hero-section'>
         <div className='slider-space'>
           <Slider />
+
         </div>
       </section>
 
-      <section className=''>
-        {/* Aqui va tu Cards Components */}
-      </section>
+      <section className='cards'>
+      {pizzasList.map(pizza => (
+        <div key={pizza.id} className='pizza-card'>
+          <img src={pizza.url} alt={pizza.title} />
+          <h3>{pizza.title}</h3>
+        </div>
+      ))}
+    </section>
 
-      <Footer />
+
+      {/* <Footer /> */}
     </>
   )
 }

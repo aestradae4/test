@@ -20,3 +20,5 @@ const pizzasList = [
         url: "https://pruebaspaginas.s3.amazonaws.com/recursos-prueba-tecnica/pizza.jpg",
     },
 ]
+
+export default pizzasList; 

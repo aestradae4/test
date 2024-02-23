@@ -1,0 +1,38 @@
+.navbar {
+    background-color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    align-items: flex-end;
+}
+
+.title a {
+    margin-bottom: 10px;
+    padding-left: 19px;
+    padding-right: 20px;
+    color: white;
+}
+
+.image {
+    margin-right: auto;
+    color: white;
+    padding-left: 10px;
+}
+
+.navbar img {
+    height: 50px;
+}
+
+.doc{
+    align-items: flex-end;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.doc a{ 
+    color: white;
+    text-decoration: none;
+}

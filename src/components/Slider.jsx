@@ -24,8 +24,7 @@ const Slider = ({ dataSlider, panelInfo }) => {
     // defineel background img inicial del slider
   const [activeID, setActiveID] = useState(0);
   const [wrapperStyle, setWrapperStyle] = useState({
-    backgroundImage: `url('${dataSlider[0].img}')`,
-    
+    backgroundImage: dataSlider && dataSlider.length > 0 ? `url('${dataSlider[0].img}')` : 'none',
   });
 
 
@@ -33,7 +32,8 @@ const Slider = ({ dataSlider, panelInfo }) => {
   const changeActive = (id) => {
     setActiveID(id);
     setWrapperStyle({ 
-      backgroundImage: `url('${dataSlider[id].img}')` });
+      backgroundImage: dataSlider && dataSlider.length > 0 ? `url('${dataSlider[id].img}')` : 'none',
+    });
   };
 
   // modifica el estilo del panel.aside en funcion del panelInfo
@@ -43,7 +43,7 @@ const Slider = ({ dataSlider, panelInfo }) => {
   // script que define el cambio de id del slider por periodos de tiempo 
   useEffect(() => {
     const interval = setInterval(() => {
-      const nextID = (activeID + 1) % dataSlider.length;
+      const nextID = (activeID + 1) % (dataSlider && dataSlider.length || 1);
       changeActive(nextID);
     }, 4000); 
 
@@ -54,7 +54,7 @@ const Slider = ({ dataSlider, panelInfo }) => {
 
   const titleAnimation = activeID % 2 === 0 ? 'slideInRight' : 'slideInLeft';
   // Actualización para usar el título del slider activo
-  const activeTitle = dataSlider[activeID].title; // Obtiene el título basado en activeID
+  const activeTitle = dataSlider && dataSlider.length > 0 ? dataSlider[activeID].title : '';
 
   return (
     <section className={wrapperClassName} style={wrapperStyle}>
